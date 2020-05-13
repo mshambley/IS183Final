@@ -1,4 +1,5 @@
-<mat-card class="input-container">
+<div class="grid-container">
+  <mat-card *ngIf="beverage" class="input-container">
     <mat-toolbar color="primary" class="create-toolbar">
       <mat-toolbar-row>
         <span class="copyright">Create a Beverage</span>
@@ -10,33 +11,29 @@
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
-    
+
     <mat-card-content>
       <div class="container">
         <img *ngIf="beverage.image_url" mat-card-image [src]="beverage.image_url" alt="beverage">
         <mat-form-field class="input">
           <input [(ngModel)]="beverage.beverage_name" matInput placeholder="Beverage Name" required>
         </mat-form-field>
-  
+
         <mat-form-field class="input">
           <input [(ngModel)]="beverage.alcohol_level" matInput placeholder="Alcohol Level" required>
         </mat-form-field>
-  
+
         <mat-form-field class="input">
           <input [(ngModel)]="beverage.volume" matInput placeholder="Volume" required>
         </mat-form-field>
 
         <mat-form-field class="input">
-          <input [(ngModel)]="beverage.image_url" matInput placeholder="Image Url" required>
-        </mat-form-field>
-
-        <mat-form-field class="input">
-          <input type="number" [(ngModel)]="beverage.price" matInput placeholder="Price" required>
+          <input [(ngModel)]="beverage.image_url" matInput placeholder="Image URL" required>
         </mat-form-field>
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="createBeverage(beverage)" color="primary">Create Beverage</button>
+      <button mat-raised-button (click)="updateBeverage(beverage)" color="primary">Update Beverage</button>
     </mat-card-actions>
   </mat-card>
-  
+</div>

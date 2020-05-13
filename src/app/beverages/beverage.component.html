@@ -1,4 +1,4 @@
-<div class="books-container">
+<div class="beverages-container">
   <mat-toolbar color="primary" class="create-toolbar">
     <mat-toolbar-row>
       <span class="title">All Beverages</span>
@@ -10,28 +10,27 @@
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
-  <div class="book-card-container">
-    <mat-card class="grow item-card" *ngFor="let bev of beverages; let i = index">
+  <div class="beverage-card-container">
+    <mat-card class="grow item-card" *ngFor="let beverage of beverages; let i = index">
       <mat-toolbar color="warn" class="toolbar">
         <mat-toolbar-row>
-          <mat-card-title>{{bev.beverage_name}}</mat-card-title>
+          <mat-card-title>{{beverage.title}}</mat-card-title>
           <mat-card-subtitle></mat-card-subtitle>
         </mat-toolbar-row>
       </mat-toolbar>
-      <img mat-card-image [src]="bev.image_url" alt="beverage">
+      <img class="list-cover-image" mat-card-image [src]="beverage.image_url" alt="beverage">
       <mat-card-content>
-        <p>ID: {{bev.id}}</p>
-        <P>Beverage Name: {{bev.beverage_name}}</P>
-        <P>Alcohol Level: {{bev.alcohol_level}}</P>
-        <P>Volume: {{bev.volume}}</P>
-        <P>Price: {{bev.price}}</P>
+        <p>ID: {{beverage.id}}</p>
+        <P>Beverage Name: {{beverage.beverage_name}}</P>
+        <P>Alcohol Level: {{beverage.alcohol_level}}</P>
+        <P>Volume: {{beverage.volume}}</P>
       </mat-card-content>
       <mat-card-actions class="btn-action-grid">
-        <button mat-raised-button (click)="deleteBeverage(bev.id)" color="warn">
+        <button mat-raised-button (click)="deleteBeverage(beverage.id)" color="warn">
           Delete
           <mat-icon class="example-icon">clear</mat-icon>
         </button>
-        <button mat-raised-button color="accent" [routerLink]="['/beverage',bev.id]">
+        <button mat-raised-button color="accent" [routerLink]="['/beverage',beverage.id]">
           Edit
           <mat-icon class="example-icon">edit</mat-icon>
         </button>

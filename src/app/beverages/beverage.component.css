@@ -1,20 +1,19 @@
-.books-container {
-  display:grid;
-  grid-template-rows:1fr 10fr;
+.beverages-container {
+  display: grid;
   grid-gap: 2em;
   margin: 30px auto;
   background-color: #ececec;
 
 }
 
-.book-card-container {
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  grid-gap:2em 2em;
+.beverage-card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em 2em;
   padding: 2em;
 }
 
-.book-card {
+.beverage-card {
   position: relative;
   height: 215px;
   padding: 5px;
